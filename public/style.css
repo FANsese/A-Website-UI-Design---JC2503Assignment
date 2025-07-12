@@ -1,0 +1,244 @@
+/* ALL THE HTML FILES SHARE A SAME CSS */
+
+/* some cuntom style that may be frequently used */
+:root{
+    --glass-bg: rgba(255, 255, 255, 0.3); 
+    --neon-shadow: 0 0 15px rgba(255, 140, 0, 0.564);
+}
+
+/* global setting */
+*{
+    font-family: 'Segoe UI', system-ui;
+    box-sizing: border-box;
+}
+
+
+/* global setting for content in html text part */
+body{
+    min-height: 100vh;
+    background: linear-gradient(   /**here to alter the background color**/
+        45deg,
+        rgba(0,78,137,0.3) 0%,
+        rgba(255, 174, 53, 0.379) 50%,
+        rgba(0,78,137,0.3) 100%
+    );
+    
+    overflow: scroll;
+    position: relative; /* remained for any possible further modification */
+}
+
+/* text style of the page */
+h1{color:rgb(255, 94, 0)}
+
+h2{color:rgba(249, 140, 15, 0.881);}
+
+h3{color:rgba(70, 70, 70, 0.534)}
+
+p{color: rgba(0, 0, 0, 0.826);}
+
+/* end of text style of the page */
+
+/* format setting */
+.container {
+    position: relative; 
+    padding: 2rem; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr)); 
+    gap: 1.5rem; 
+    min-width: 300px;
+}
+
+/* card modules for holding contents with button(altered from link-card) */
+.content-card{
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 1.4rem 3rem;
+    display: flex;                 
+    flex-direction: column;     
+    justify-content: center;
+}
+
+/* card modules for hoding contents */
+.link-card{
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 3rem;
+    transition: 0.3s all ease;
+    transform-style: preserve-3d;
+}
+
+/* Only card with button will float */
+.link-card:hover {
+    transform: translateY(-5px) rotate3d(1, -1, 0, 5deg);
+    box-shadow: var(--neon-shadow);
+}
+
+/* button style */
+.button{
+    color: rgba(0, 169, 231, 0.991);
+    background-color: rgba(255, 255, 255, 0.509);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+/*for wrapping buttons*/
+.button-group {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;            
+    margin-left: 2rem;     
+}
+
+/* an effect when pointer hover above the button */
+.button:hover{
+    background: rgb(255, 255, 255); 
+    box-shadow: var(--neon-shadow);
+}
+
+
+/* button-linking */
+a{
+    color: rgb(54, 158, 255);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20%, 30%;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+/* Style for all the images in all the files */
+img{
+    max-width: min(100%, 400px);  /*following the restriction of min-width of card. If the width problem are solved, change the code here*/
+    max-height: min(100%, 300px);
+    border-radius: 20px;
+}
+
+/* navigation site style */
+nav {
+    padding: 1rem 5%;
+    border-radius: 20px;
+    background:linear-gradient(
+        45deg,
+        rgb(165, 207, 255) 0%,
+        rgb(255, 218, 163) 50%,
+        rgb(219, 255, 134) 100%
+    );
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0);
+}
+
+/* navigation link content */
+.nav-links a {
+    color: rgb(255, 94, 0);
+    text-decoration: none;
+    margin: 10px;
+    transition: all 0.3s;
+    padding: 0.2rem 1rem;
+    border-radius: 8px;
+}
+
+/* effect when pointer float on links */
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.63);
+}
+
+/* Following are styles added for quiz */
+/* For containing instructions */
+.instruction-card{
+    background: var(--glass-bg, rgba(255,255,255,0.8)); 
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 1.4rem 3rem;
+    width: fit-content;
+    max-width: 90vw; 
+    min-width: 300px; 
+    height: auto;
+    margin: 2rem auto; 
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    word-wrap: break-word;  
+    transition: 0.3s all ease;
+    transform-style: preserve-3d;
+}
+.instruction-card:hover{
+    box-shadow: var(--neon-shadow);
+}
+
+/* Style for marks */
+mark{
+    background-color: rgba(98, 255, 239, 0.603);
+    border-radius: 10px;
+}
+
+.inputName{
+    background: var(--glass-bg, rgba(255,255,255,0.8)); 
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 1.4rem 3rem;
+    width: fit-content;
+    max-width: 90vw; 
+    min-width: 300px; 
+    height: auto;
+    margin: 2rem auto; 
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    word-wrap: break-word; 
+}
+
+/* Style of input block and it's submit button */
+input{
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    height: 40px;
+    font-size: larger;
+    border-color: rgba(0,0,0,0);
+    transition: 0.3s all ease;
+    transform-style: preserve-3d;
+}
+input:hover{
+    box-shadow: var(--neon-shadow);
+}
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgba(0, 255, 200, 0.63);
+    border-color: rgba(0,0,0,0);
+    transition: 0.3s all ease;
+    transform-style: preserve-3d;
+}
+button:hover{
+    box-shadow: var(--neon-shadow);
+}
+
+/* Style of name list */
+.nameList{
+    background: var(--glass-bg, rgba(255,255,255,0.8)); 
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 1.4rem 3rem;
+    width: fit-content;
+    max-width: 90vw; 
+    min-width: 300px; 
+    height: auto;
+    margin: 2rem auto; 
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    word-wrap: break-word; 
+}
+
+.nameContainer{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}

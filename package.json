@@ -1,0 +1,15 @@
+{
+  "name": "2503assignment_edit28-1",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "milan markovic",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket": "^1.0.0",
+    "socket.io": "^4.8.1"
+  }
+}

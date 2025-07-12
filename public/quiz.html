@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+        <nav>
+            <h1>Quiz</h1>
+            <div class="button-group" style="flex-direction: row;">  
+                <a href="index.html">
+                    <div class="button">Introduction</div>   
+                </a>
+                <a href="about_page.html">
+                    <div class="button">About</div>   
+                </a> 
+            </div>  
+        </nav>
+
+        
+        <div class="instruction-card" >
+            <ul>
+                <li>Here's the Quiz Game!</li>
+                <li>In here, you are able to answer some questions, compete with other players 
+                    by getting more marks!
+                </li>
+                <li>Choose the player's name<mark> in the list below </mark>to challenge he/she!
+                    <br>Other players might challenge you too, so be ready for it!
+                    <br>Of course, you can choose whether accept their challege or not.
+                </li>
+                <li>Each round is a<mark> one-on-one </mark>match between two players.</li>
+            </ul>
+        </div>
+    
+    <div class="inputName">   
+        <div id="login">
+            <input type="text" id="nameInput" placeholder="Enter your name">
+            <button onclick="register()">Join</button>
+        </div>
+    </div> 
+
+    <div class="nameList">
+            <h2>Choose a person to compete with him/her !</h2>
+        <div id="lobby" style="display: none;">
+            <h2>Online Players:</h2>
+            <div id="playersList"></div>
+        </div>
+    </div>    
+
+    <div class="inputName"> <!-- Since the use is similar, so I directly use this css -->
+        <div id="game" style="display: none;"> <!-- Don't know why it can't clear all of the other blocks -->
+            <h2 id="questionText"></h2>
+            <div id="optionsContainer"></div>
+            <div id="scores"></div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
